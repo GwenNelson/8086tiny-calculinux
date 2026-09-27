@@ -7,7 +7,7 @@
 # 8086tiny_slowcpu improves graphics performance on slow platforms (e.g. Raspberry Pi)
 # no_graphics compiles without SDL graphics/sound
 
-OPTS_ALL=-O3 -fsigned-char -std=c99
+OPTS_ALL=-g -fsigned-char -std=c99
 SDK_SYSROOT ?= $(if $(SDKTARGETSYSROOT),$(SDKTARGETSYSROOT),/opt/calculinux-sdk/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-musleabi)
 SDL_PKG_CONFIG = PKG_CONFIG_SYSROOT_DIR="$(SDK_SYSROOT)" PKG_CONFIG_LIBDIR="$(SDK_SYSROOT)/usr/lib/pkgconfig:$(SDK_SYSROOT)/usr/share/pkgconfig" PKG_CONFIG_PATH= pkg-config --cflags --libs sdl
 OPTS_NOGFX=-DNO_GRAPHICS
