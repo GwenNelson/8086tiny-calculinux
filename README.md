@@ -1,3 +1,8 @@
+## PicoCalc CalcuLinux port notes
+
+The build is in build/ for convenience
+
+
 8086tiny
 ========
 
