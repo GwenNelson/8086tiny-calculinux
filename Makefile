@@ -15,16 +15,13 @@ OPTS_SLOWCPU=-DGRAPHICS_UPDATE_DELAY=25000
 STRIP ?= strip
 
 8086tiny: 8086tiny.c
-	@set -e; sdl_flags="$$( $(SDL_PKG_CONFIG) )"; ${CC} 8086tiny.c $$sdl_flags ${OPTS_ALL} -o 8086tiny
-	${STRIP} 8086tiny
+	@set -e; sdl_flags="$$( $(SDL_PKG_CONFIG) )"; ${CC} 8086tiny.c $$sdl_flags ${OPTS_ALL} -o build/8086tiny
 
 8086tiny_slowcpu: 8086tiny.c
-	@set -e; sdl_flags="$$( $(SDL_PKG_CONFIG) )"; ${CC} 8086tiny.c $$sdl_flags ${OPTS_ALL} ${OPTS_SLOWCPU} -o 8086tiny
-	${STRIP} 8086tiny
+	@set -e; sdl_flags="$$( $(SDL_PKG_CONFIG) )"; ${CC} 8086tiny.c $$sdl_flags ${OPTS_ALL} ${OPTS_SLOWCPU} -o build/8086tiny
 
 no_graphics: 8086tiny.c
-	${CC} 8086tiny.c ${OPTS_NOGFX} ${OPTS_ALL} -o 8086tiny
-	${STRIP} 8086tiny
+	${CC} 8086tiny.c ${OPTS_NOGFX} ${OPTS_ALL} -o build/8086tiny
 
 clean:
 	rm 8086tiny
